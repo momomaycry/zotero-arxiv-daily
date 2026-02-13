@@ -1,4 +1,8 @@
 import arxiv
+import os
+print("ENV KEYS:", list(os.environ.keys()))
+print("ZOTERO_ID via getenv:", os.getenv("ZOTERO_ID"))
+print("ZOTERO_ID via environ:", os.environ.get("ZOTERO_ID"))
 
 def _get_pdf_url_patch(links) -> str:
     """
