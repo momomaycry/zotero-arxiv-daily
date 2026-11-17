@@ -255,7 +255,12 @@ class ArxivRetriever(BaseRetriever):
                 f"Failed to fetch valid arxiv RSS feed from {rss_url} after {retry_num} attempts "
                 f"(status={status}, bozo_exception={bozo_exc})"
             )
-
+        logger.info(f"arXiv RSS feed returned {len(feed.entries)} entries")
+        logger.info(
+            f"arXiv announce types: "
+            f"{[i.get('arxiv_announce_type', 'new') for i in feed.entries]}"
+        )
+        
         allowed_announce_types = {"new", "cross"} if include_cross_list else {"new"}
         target_entries = [
             i for i in feed.entries
