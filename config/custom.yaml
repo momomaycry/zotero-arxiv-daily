@@ -20,7 +20,7 @@ llm:
 
 source:
   arxiv:
-    category: ["cs.AI","cs.CV","cs.LG","cs.CL"]
+    category: ["astro-ph.GA"]
 
 executor:
   debug: ${oc.env:DEBUG,null}
